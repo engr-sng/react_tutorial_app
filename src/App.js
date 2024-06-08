@@ -4,15 +4,18 @@ import React, { useState } from 'react';
 function App() {
   // 関数の宣言
   let CountTest = 0;
+  const countDisplay = document.getElementById('count');
 
   // ボタンをクリックすると、状態を更新する関数を定義します
   const incrementTest = () => {
     CountTest++;
+    countDisplay.textContent = CountTest;
     console.log(CountTest);
   };
 
   const decrementTest = () => {
     CountTest--;
+    countDisplay.textContent = CountTest;
     console.log(CountTest);
   };
 
@@ -33,7 +36,7 @@ function App() {
       <h1>React Hooks Tutorial</h1>
       <hr />
       <h2>Counter useStateの使用なし</h2>
-      <p>Count: {CountTest}</p>
+      <p>Count: <span id="count">0</span></p>
        {/* カウンターの値を増やすボタン */}
       <button onClick={incrementTest}>+</button>
       {/* カウンターの値を減らすボタン */}
