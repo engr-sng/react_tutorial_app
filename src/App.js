@@ -2,8 +2,14 @@ import './App.css';
 import React, { createContext, useContext } from 'react';
 import ParentComponent from './components/ParentComponent';
 
+// Contextの値を定義
+const contextValue = {
+  info: 'コンテキストの読み込みに成功しました。',
+  context: 'コンテキストはMyContextです。',
+};
+
 // Contextを作成
-const MyContext = createContext();
+const MyContext = createContext(contextValue);
 
 // コンポーネント内でContextを使用するためのカスタムHookを定義
 export function useMyContext() {
@@ -11,11 +17,6 @@ export function useMyContext() {
 }
 
 function App() {
-  // Contextの値を定義
-  const contextValue = {
-    data: 'Hello from Context!',
-  };
-
   return (
     <MyContext.Provider value={contextValue}>
       <div>

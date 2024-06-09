@@ -3,9 +3,14 @@ import { useMyContext } from '../App'; // App.jsからuseMyContextをインポ�
 
 function ChildComponent() {
   // Contextの値を取得
-  const { data } = useMyContext();
+  const data = useMyContext();
 
-  return <p>{data}</p>;
+  return (
+    <>
+        <p>{data.info}</p>
+        <p>{data.context}</p>
+    </>
+  );
 }
 
 export default ChildComponent; // ChildComponentをデフォルトエクスポート
